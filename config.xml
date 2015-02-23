@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+    xmlns:gap = "http://phonegap.com/ns/1.0"
+    id        = "com.phonegap.example"
+    version   = "1.0.0">
+
+<name>Business expo sign up</name>
+<icon src="icon.png" width="72" height="72"/>
+<gap:splash src="splash.png"/>
+<description>
+Simple Sign Up Form
+</description>
+<preference name="fullscreen" value="true"/>
+<access origin="*" />
+<author href="https://example.com" email="you@example.com">
+Luke Cleavland
+</author>
+<preference name="orientation" value="portrait"/>
+</widget>
