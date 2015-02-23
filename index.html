@@ -32,12 +32,12 @@
 		
 		 $("#ff").html(data); 
 		 $("#ff")[0].reset();
-		//window.setTimeout("window.location.reload()",5000);
+		window.setTimeout("window.location.reload()",5000);
 		  return true;
 		},
 		error:function(){
 			$(".warning").text("There was an error connecting to the database");
-			//window.setTimeout("window.location.reload()", 5000);
+			window.setTimeout("window.location.reload()", 5000);
 		}
 			});
 		
@@ -57,7 +57,7 @@
 	
     	<div class="row top">
                 <img src="images/top.jpg"/>
-		V1
+		V2
        	</div>
     	<div class="row middle">
         	   <form id="ff" class="ffs" method="post">
