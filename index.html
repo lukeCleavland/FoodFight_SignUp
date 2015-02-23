@@ -18,7 +18,7 @@
 		return false;	
 		}
 	});
-	$('#ff').submit(function(){
+	$('form').submit(function(){
 	var emailID = $(this).parent().attr('data-email-id');
 	var postData = $(this).serialize();
 	/*
@@ -29,19 +29,24 @@
 	   */
 		   $.ajax({
 		type:'POST',
-		url: "http://foodfightmarketing.com/KioskApp/v3/formPros.php",
 		data: postData+'&amp;email='+emailID,
+		url: "http://localhost/foodfightsignup/formPros.php",
+		
 
 		success:function(data)
 		{
 		
-		 $("#ff").html(data); 
+		 console.log(data); 
 		 //$("#ff")[0].reset();
 		window.setTimeout("window.location.reload()",5000);
-		  return true;
+		//alert('Your comment was successfully added');
+
+		  //return true;
 		},
 		error:function(){
 			$(".warning").text("There was an error connecting to the database");
+			//alert('There was an error adding your comment');
+
 			window.setTimeout("window.location.reload()", 5000);
 		}
 			});
