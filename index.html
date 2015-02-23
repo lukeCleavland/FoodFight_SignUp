@@ -28,13 +28,15 @@ $(document).ready(function(){
 
 }
 	$('#ff').on("submit", function(event){
-	event.preventDefault();
+	//event.preventDefault();
+	/*
 	 if (!isEmail($("#email").val())) {
 		//codea
 		$("#email").css("background","#fffb97");
 		$(".warning").text("Please enter a valid email address");
 		//return false;
 	   }else{
+	   */
 		   $.ajax({
 		type:'POST',
 		url: "http://foodfightmarketing.com/KioskApp/v3/formPros.php",
@@ -56,7 +58,7 @@ $(document).ready(function(){
 			});
 		
 		
-	   }
+	  // }
 	});
 	$("#email").focus(function(){
 				$("#email").css("background-color","white");
