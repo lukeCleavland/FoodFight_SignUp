@@ -37,20 +37,21 @@ $(document).ready(function(){
 	   }else{
 		   $.ajax({
 		type:'POST',
-		url: "http://foodfightmarketing.com/KioskApp/v3/formPros.php",
-		data: $(this).serialize(),
+		url: "http://localhost/foodfightsignup/formPros.php",
+		data: $("#ff").serialize(),
 		success:function(data)
 		{
-		
-		 $("#ff").html(data); 
+			console.log(data)
+		$("#ff").html(data); 
 		$("#ff")[0].reset();
+	
 		window.setTimeout("window.location.reload()",5000);
-		return true;
+		
 		},
 		error:function(){
 			$(".warning").text("There was an error connecting to the database");
-			//window.setTimeout("window.location.reload()", 5000);
-	
+			window.setTimeout("window.location.reload()", 5000);
+	console.log(data)
 		}
 			});
 		
