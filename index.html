@@ -41,19 +41,16 @@ $(document).ready(function(){
 		type:'POST',
 		url: "http://foodfightmarketing.com/KioskApp/v3/formPros.php",
 		data: "email="+email,
-		success:function(data)
+		success:function(response)
 		{
-			console.log(data)
-		$("#ff").html(data); 
-		$("#ff")[0].reset();
-	
+		$("#ff").html(response); 
+		//$("#ff")[0].reset();
 		window.setTimeout("window.location.reload()",5000);
 		
 		},
 		error:function(){
 			$(".warning").text("There was an error connecting to the database");
 			window.setTimeout("window.location.reload()", 5000);
-	console.log(data)
 		}
 			});
 		
