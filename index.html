@@ -8,8 +8,51 @@
 <title>Hubbard Pi Day</title>
 <script type="text/javascript" src="js/jquery_min.js"></script>
 </head>
-<script type="text/javascript" src="http://foodfightmarketing.com/KioskApp/js/ajaxcall.js"></script>
+
 <body>
+<script>$(document).ready(function(){
+	$(window).keydown(function(event){
+		if(event.keyCode == 13) {
+		event.preventDefault();
+		$("#email").blur();
+		return false;	
+		}
+	});
+	$('#ff').submit(function(){
+	   if ($("#email").val().length<=1){
+			$("#email").css("background","yellow");
+			return false;
+	   }else{
+		   $.ajax({
+		type:'POST',
+		url: "./formPros.php",
+		data: $("#ff").serialize(),
+		success:function(data)
+		{
+		
+		 $("#ff").html(data); 
+		 $("#ff")[0].reset();
+		//window.setTimeout("window.location.reload()",5000);
+		  return true;
+		},
+		error:function(){
+			$(".warning").text("There was an error connecting to the database");
+			//window.setTimeout("window.location.reload()", 5000);
+		}
+			});
+		
+			return false;
+	   }
+	});
+	$("#email").focus(function(){
+				$("#email").css("background-color","white");
+			});
+
+	
+
+	});
+
+</script>
 <div id="page">
 	
     	<div class="row top">
