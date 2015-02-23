@@ -45,9 +45,9 @@ $(document).ready(function(){
 		url: "http://foodfightmarketing.com/KioskApp/v3/formPros.php",
 		data: formData,
 		dataType: 'json',
-		success:function(response)
+		success:function(data)
 		{
-		$("#ff").html(response); 
+		$("#ff").html(data); 
 		//$("#ff")[0].reset();
 		window.setTimeout("window.location.reload()",5000);
 		
