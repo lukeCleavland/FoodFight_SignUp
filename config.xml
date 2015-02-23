@@ -4,11 +4,11 @@
     id        = "com.phonegap.example"
     version   = "1.0.0">
 
-<name>Business expo sign up</name>
+<name>Hubbard Pi Day</name>
 <icon src="icon.png" width="72" height="72"/>
 <gap:splash src="splash.png"/>
 <description>
-Simple Sign Up Form
+Sign Up Form form Hubbard Pi Day
 </description>
 <preference name="fullscreen" value="true"/>
 <access origin="*" />
