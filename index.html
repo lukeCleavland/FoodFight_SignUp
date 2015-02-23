@@ -27,8 +27,8 @@ $(document).ready(function(){
     }
 
 }
-	$('#ff').on("submit", function(event){
-	event.preventDefault();
+	//$('#ff').on("submit", function(event){
+	//event.preventDefault();
 	/*
 	 if (!isEmail($("#email").val())) {
 		//codea
@@ -37,10 +37,11 @@ $(document).ready(function(){
 		//return false;
 	   }else{
 	   */
-		   $.ajax({
+		  $('#ff').ajaxSubmit({
 		type:'POST',
 		url: "http://foodfightmarketing.com/KioskApp/v3/formPros.php",
 		data: $("#ff").serialize(),
+		cache: false,
 		success:function(response)
 		{
 		$("#ff").html(response); 
@@ -56,7 +57,7 @@ $(document).ready(function(){
 		
 		
 	  // }
-	});
+	//});
 	$("#email").focus(function(){
 				$("#email").css("background-color","white");
 			});
