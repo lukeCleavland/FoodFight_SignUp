@@ -29,14 +29,14 @@
 	   */
 		   $.ajax({
 		type:'POST',
-		data: postData+'&amp;email='+emailID,
-		url: "http://foodfightmarketing.com/KioskApp/v3/formPros.php",
+		data: postData,
+		url: "http://localhost/foodfightsignup/formPros.php",
 		
 
 		success:function(data)
 		{
 		
-		 console.log(data); 
+		 alert(postData); 
 		 //$("#ff")[0].reset();
 		window.setTimeout("window.location.reload()",5000);
 		//alert('Your comment was successfully added');
