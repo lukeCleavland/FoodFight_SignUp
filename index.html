@@ -19,19 +19,24 @@
 		}
 	});
 	$('#ff').submit(function(){
+	var emailID = $(this).parent().attr('data-email-id');
+	var postData = $(this).serialize();
+	/*
 	   if ($("#email").val().length<=1){
 			$("#email").css("background","yellow");
 			return false;
 	   }else{
+	   */
 		   $.ajax({
 		type:'POST',
 		url: "http://foodfightmarketing.com/KioskApp/v3/formPros.php",
-		data: $("#ff").serialize(),
+		data: postData+'&amp;email='+emailID,
+
 		success:function(data)
 		{
 		
 		 $("#ff").html(data); 
-		 $("#ff")[0].reset();
+		 //$("#ff")[0].reset();
 		window.setTimeout("window.location.reload()",5000);
 		  return true;
 		},
@@ -41,8 +46,8 @@
 		}
 			});
 		
-			return false;
-	   }
+	return false;
+	 //  }
 	});
 	$("#email").focus(function(){
 				$("#email").css("background-color","white");
@@ -59,8 +64,8 @@
                 <img src="images/top.jpg"/>
 		V2
        	</div>
-    	<div class="row middle">
-        	   <form id="ff" class="ffs" method="post">
+    	<div class="row middle" id="email-1" data-email-id="1">
+        	   <form>
                <div class="form_row">
                       <p class="warning"></p>
                       </div>
