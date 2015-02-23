@@ -23,7 +23,7 @@ $(document).ready(function(){
 	});
 	*/
 	$('#submit').click(function(e){
-	var postData = $(this).serialize();
+	var postData = $("#email").serialize();
 	/*
 	   if ($("#email").val().length<=1){
 			$("#email").css("background","yellow");
@@ -32,8 +32,8 @@ $(document).ready(function(){
 	   */
 		   $.ajax({
 		type:'POST',
-		data: {email: postData},
-		url: "http://foodfightmarketing.com/KioskApp/v3/formPros.php",
+		data: postData,
+		url: "http://localhost/foodfightsignup/formPros.php",
 		
 
 		success:function(data)
@@ -56,9 +56,11 @@ $(document).ready(function(){
 			});
 		
 	  e.preventDefault();
+	  
 	 //  }
+	
 	})
-}
+})
 	/*
 	$("#email").focus(function(){
 				$("#email").css("background-color","white");
@@ -85,10 +87,10 @@ $(document).ready(function(){
                       <input type="text" id="email" name="email" size="30" placeholder="Email Address" value=""></input>
                       </div>
                       <div class="form_row">
-         			<input type="submit" value="submit" id="submit">subscribe to list</input>
+         			
                     </div>
                   </form>	
-                 
+                 <button type="submit" value="submit" id="submit">subscribe to list</button>
         </div>
         <div class="row break">
        <hr>
