@@ -14,7 +14,7 @@ $(document).ready(function(){
 		if(event.keyCode == 13) {
 		event.preventDefault();
 		$("#email").blur();
-		event.preventDefault();	
+		return false;	
 		}
 	});
 	function isEmail(emailV){
@@ -27,34 +27,34 @@ $(document).ready(function(){
     }
 
 }
-	$('#ff').submit(function(e){
+	$('#ff').on("submit", function(event){
+	event.preventDefault();
 	 if (!isEmail($("#email").val())) {
 		//codea
 		$("#email").css("background","#fffb97");
 		$(".warning").text("Please enter a valid email address");
-		e.preventDefault();
+		//return false;
 	   }else{
 		   $.ajax({
 		type:'POST',
-		url: "http://foodfightmarketing.com/KioskApp/v3/formPros.php",
+		url: "http://localhost/foodfightsignup/formPros.php",
 		data: $(this).serialize(),
 		success:function(data)
 		{
 		
 		 $("#ff").html(data); 
-		 $("#ff")[0].reset();
-		//window.setTimeout("window.location.reload()",5000);
-		//return true;
-		console.log(data);
+		$("#ff")[0].reset();
+		window.setTimeout("window.location.reload()",5000);
+		return true;
 		},
 		error:function(){
 			$(".warning").text("There was an error connecting to the database");
 			//window.setTimeout("window.location.reload()", 5000);
-			//return false;
+	
 		}
 			});
 		
-			
+		
 	   }
 	});
 	$("#email").focus(function(){
