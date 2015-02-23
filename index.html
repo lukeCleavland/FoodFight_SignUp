@@ -8,70 +8,7 @@
 <title>Hubbard Pi Day</title>
 <script type="text/javascript" src="js/jquery_min.js"></script>
 </head>
-<script>
-$(document).ready(function(){
-	$(window).keydown(function(event){
-		if(event.keyCode == 13) {
-		event.preventDefault();
-		$("#email").blur();
-		return false;	
-		}
-	});
-	function isEmail(emailV){
-    if(emailV != null && emailV != undefined){
-        var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
-        return pattern.test(emailV);    
-    }
-    else{
-        return false;
-    }
-
-}
-	$('#ff').submit( function(event){
-	var formData = {
-	 'email': $('input[name=email]').val(),
-	 'submit': 'on'
-	}
-	/*
-	 if (!isEmail($("#email").val())) {
-		//codea
-		$("#email").css("background","#fffb97");
-		$(".warning").text("Please enter a valid email address");
-		//return false;
-	   }else{
-	   */
-		   $.ajax({
-		type:'POST',
-		url: "http://foodfightmarketing.com/KioskApp/v3/formPros.php",
-		data: formData,
-		dataType: 'json',
-		success:function(data)
-		{
-		$("#ff").html(data); 
-		//$("#ff")[0].reset();
-		window.setTimeout("window.location.reload()",5000);
-		
-		},
-		error:function(){
-			$(".warning").text("There was an error connecting to the database");
-			window.setTimeout("window.location.reload()", 5000);
-		}
-			});
-		
-		
-	  // }
-	  event.preventDefault();
-	});
-	$("#email").focus(function(){
-				$("#email").css("background-color","white");
-			});
-
-	
-
-	});
-
-
-</script>
+<script type="text/javascript" src="http://foodfightmarketing.com/KioskApp/js/ajaxcall.js"></script>
 <body>
 <div id="page">
 	
@@ -79,7 +16,7 @@ $(document).ready(function(){
                 <img src="images/top.jpg"/>
        	</div>
     	<div class="row middle">
-        	   <form id="ff" class="ffs" action="http://foodfightmarketing.com/KioskApp/v3/formPros.php"  method="post">
+        	   <form id="ff" class="ffs" method="post">
                <div class="form_row">
                       <p class="warning"></p>
                       </div>
