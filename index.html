@@ -40,7 +40,7 @@ $(document).ready(function(){
 		   $.ajax({
 		type:'POST',
 		url: "http://foodfightmarketing.com/KioskApp/v3/formPros.php",
-		data: "email="+email,
+		data: $("#ff").serialize(),
 		success:function(response)
 		{
 		$("#ff").html(response); 
@@ -74,7 +74,7 @@ $(document).ready(function(){
                 <img src="images/top.jpg"/>
        	</div>
     	<div class="row middle">
-        	   <form id="ff" class="ffs">
+        	   <form id="ff" class="ffs" method="post">
                <div class="form_row">
                       <p class="warning"></p>
                       </div>
