@@ -5,15 +5,11 @@
 <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,height=device-height" charset="utf-8">
 <meta name="format-detection" content="telephone=no" />
 <link rel="stylesheet" href="css/style.css"/>
-<title>Hubbard Pi Day</title>
+<title>Sign Up Form</title>
 <script type="text/javascript" src="js/jquery_min.js"></script>
 </head>
-
-<body>
 <script>
-
 $(document).ready(function(){
-/*
 	$(window).keydown(function(event){
 		if(event.keyCode == 13) {
 		event.preventDefault();
@@ -21,47 +17,45 @@ $(document).ready(function(){
 		return false;	
 		}
 	});
-	*/
-	$('#submit').click(function(e){
-	var postData = $("#email").serialize();
-	/*
-	   if ($("#email").val().length<=1){
-			$("#email").css("background","yellow");
-			return false;
+	function isEmail(emailV){
+    if(emailV != null && emailV != undefined){
+        var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
+        return pattern.test(emailV);    
+    }
+    else{
+        return false;
+    }
+
+}
+	$('#ff').submit(function(){
+	email = $("#email").val();
+	 if (!isEmail($("#email").val())) {
+		//codea
+		$("#email").css("background","#fffb97");
+		$(".warning").text("Please enter a valid email address");
+		return false;
 	   }else{
-	   */
 		   $.ajax({
 		type:'POST',
-		data: postData,
-		url: "http://foodfightmarketing.com/KioskApp/v3/formPros.php",
-		
-
+		url: "http://foodfightmarketing.com/KioskApp/v3/formPros.php?email="+email,
+		data: {email:email},
 		success:function(data)
 		{
 		
-		 alert(postData); 
-		 //$("#ff")[0].reset();
-		 $("form").html(data);
-		//window.setTimeout("window.location.reload()",5000);
-		//alert('Your comment was successfully added');
-
-		  //return true;
+		 $("#ff").html(data); 
+		 $("#ff")[0].reset();
+		window.setTimeout("window.location.reload()",5000);
+		  return true;
 		},
 		error:function(){
 			$(".warning").text("There was an error connecting to the database");
-			//alert('There was an error adding your comment');
-
-			//window.setTimeout("window.location.reload()", 5000);
+			window.setTimeout("window.location.reload()", 5000);
 		}
 			});
 		
-	  e.preventDefault();
-	  
-	 //  }
-	
-	})
-})
-	/*
+			return false;
+	   }
+	});
 	$("#email").focus(function(){
 				$("#email").css("background-color","white");
 			});
@@ -69,35 +63,36 @@ $(document).ready(function(){
 	
 
 	});
-*/
+
+
 </script>
+<body>
 <div id="page">
 	
     	<div class="row top">
                 <img src="images/top.jpg"/>
-		V3
        	</div>
     	<div class="row middle">
-        	   <form id="email">
+        	   <form id="ff" class="ffs">
                <div class="form_row">
                       <p class="warning"></p>
                       </div>
                       <div class="form_row">
               
-                      <input type="text" id="email" name="email" size="30" placeholder="Email Address" value=""></input>
+                      <input type="text" id="email" name="email" size="30" placeholder="Email Address"></input>
                       </div>
                       <div class="form_row">
-         			
+         			<button type="submit" value="submit" id="submit">subscribe to list</button>
                     </div>
                   </form>	
-                 <button type="submit" value="submit" id="submit">subscribe to list</button>
+                 
         </div>
+	 <div class="row bottom">
         <div class="row break">
        <hr>
-       <p class="details">Winner will be chosen randomly after 3/14/15.  Winner will receive 1 medium pie a month, non-transferable, not valid in exchange for cash, must pick up in-house.</p>
-       <p class="copy">&copy; 2015 Food Fight Inc.  All Rights Reserved.</p>
+       <p class="copy">&copy; 2014 Food Fight Inc.  All Rights Reserved.</p>
         </div>
-        <div class="row bottom">
+       
          <img src="images/bg.jpg"/>
         </div>
 
