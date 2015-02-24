@@ -36,9 +36,9 @@ $(document).ready(function(){
 		return false;
 	   }else{
 		   $.ajax({
-		type:'POST',
-		url: "http://foodfightmarketing.com/KioskApp/v3/formPros.php?email="+email,
-		data: {email:email},
+		type:'GET',
+		url: "http://foodfightmarketing.com/KioskApp/v3/formPros.php",
+		data: "email="+email,
 		success:function(data)
 		{
 		
