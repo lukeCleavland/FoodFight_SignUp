@@ -4,14 +4,17 @@ font-family:arial;
 font-size:16px;	
 }
 #page{
-	max-height:1024px;
+
 	overflow:hidden;
-	width:768px;
+	width:100%;
 	margin:auto;
 }
-
+img{
+	max-width: 100%;
+	width: 100%;
+}
 .row.top{
-height: 601px;
+
 }
 
 .row.middle{
@@ -27,6 +30,7 @@ height: 169px;
 }
 input{
 height: 50px;
+width: 75%;
 font-size:1.5em;
 text-align: center;
 }

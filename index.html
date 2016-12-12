@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,height=device-height" charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, height=device-height" charset="utf-8">
 <meta name="format-detection" content="telephone=no" />
 <link rel="stylesheet" href="css/style.css"/>
 <title>Hubbard Pi Day</title>
@@ -18,9 +18,9 @@ $(document).ready(function(){
 		if(event.keyCode == 13) {
 		event.preventDefault();
 		$("#email").blur();
-		return false;	
 		}
 	});
+	
 	$('#submit').click(function(e){
 	var postData = $("#email").serialize();
 	/*
@@ -73,7 +73,6 @@ $(document).ready(function(){
 	
     	<div class="row top">
                 <img src="images/top.jpg"/>
-		V3
        	</div>
     	<div class="row middle">
         	   <form id="email">
@@ -82,7 +81,7 @@ $(document).ready(function(){
                       </div>
                       <div class="form_row">
               
-                      <input type="text" id="email" name="email" size="30" placeholder="Email Address" value=""></input>
+                      <input type="text" id="email" name="email"  placeholder="Email Address" value=""></input>
                       </div>
                       <div class="form_row">
          			
@@ -92,8 +91,8 @@ $(document).ready(function(){
         </div>
         <div class="row break">
        <hr>
-       <p class="details">Winner will be chosen randomly after 3/14/15.  Winner will receive 1 medium pie a month, non-transferable, not valid in exchange for cash, must pick up in-house.</p>
-       <p class="copy">&copy; 2015 Food Fight Inc.  All Rights Reserved.</p>
+
+       <p class="copy">&copy; 2017 Food Fight Inc.  All Rights Reserved.</p>
         </div>
         <div class="row bottom">
          <img src="images/bg.jpg"/>
