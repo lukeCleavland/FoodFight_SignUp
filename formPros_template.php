@@ -1,8 +1,8 @@
 <?php  ('Access-Control-Allow-Origin: *');
-$server = "localhost";
-	$username = "ffadmin_da";
-	$password = "mar@ff2014";
-	$database = "ffadmin_kiosk_app";
+$server = "";
+	$username = "";
+	$password = "";
+	$database = "";
 	 
 	$con = mysql_connect($server, $username, $password) or die ("Could not connect: " . mysql_error());
 	 
