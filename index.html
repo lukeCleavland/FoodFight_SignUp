@@ -32,13 +32,13 @@ $(document).ready(function(){
 		   $.ajax({
 		type:'POST',
 		data: postData,
-		url: "formPros.php",
+		url: "http://foodfightmarketing.com/KioskApp/v3/formPros.php",
 		
 
 		success:function(data)
 		{
 		
-		 alert("new"); 
+		 alert(postData); 
 		 //$("#ff")[0].reset();
 		 $("form").html(data);
 		//window.setTimeout("window.location.reload()",5000);
@@ -47,7 +47,7 @@ $(document).ready(function(){
 		  //return true;
 		},
 		error:function(){
-			$(".warning").text("TEST There was an error connecting to the database");
+			$(".warning").text("There was an error connecting to the database");
 			//alert('There was an error adding your comment');
 
 			//window.setTimeout("window.location.reload()", 5000);
