@@ -4,109 +4,62 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, height=device-height" charset="utf-8">
 <meta name="format-detection" content="telephone=no" />
+<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap.min.css"/>
 <link rel="stylesheet" href="css/style.css"/>
 <title>Email Sign Up</title>
 <script type="text/javascript" src="js/jquery_min.js"></script>
+<script type="text/javascript" src="js/signup.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
-<script>
-
-$(document).ready(function(){
-
-	$(window).keydown(function(event){
-		if(event.keyCode == 13) {
-		event.preventDefault();
-		$("#email").blur();
-		}
-	});
+<div class="container">
+	<div class="row wrapper">
+<div class="col-xs-8 col-xs-offset-2 bg">
+<div class="row">
 	
-	$('#submit').click(function(e){
-	var postData = $("#email").serialize();
-	/*
-	   if ($("#email").val().length<=1){
-			$("#email").css("background","yellow");
-			return false;
-	   }else{
-	   */
-		   $.ajax({
-		type:'POST',
-		data: postData,
-		url: "http://foodfightmarketing.com/KioskApp/v3/formPros.php",
-		
-
-		success:function(data)
-		{
-		
-		 alert(postData); 
-		 //$("#ff")[0].reset();
-		 $("form").html(data);
-		//window.setTimeout("window.location.reload()",5000);
-		//alert('Your comment was successfully added');
-
-		  //return true;
-		},
-		error:function(){
-			$(".warning").text("There was an error connecting to the database");
-			//alert('There was an error adding your comment');
-
-			//window.setTimeout("window.location.reload()", 5000);
-		}
-			});
-		
-	  e.preventDefault();
-	  
-	 //  }
-	
-	})
-//})
-	
-	$("#email").focus(function(){
-				$("#email").css("background-color","white");
-			});
-
-	
-
-	});
-</script>
-<div id="page">
-	
-    	<div class="row top">
-                <img src="images/top.jpg"/>
+    	<div class="col-xs-12">
+                <img id="logo" src="images/logo.png"/>
        	</div>
-    	<div class="row middle">
-        	   <form id="email">
-               <div class="form_row">
-                      <p class="warning"></p>
-                      </div>
-                      <div class="form_row">
-              
-                      <input type="text" id="email" name="email"  placeholder="Email Address" value=""></input>
-                      </div>
-                      <div class="form_row">
-         			
-                    </div>
-                  </form>	
-                 <button type="submit" value="submit" id="submit">subscribe to list</button>
+</div>
+<div class="row bubbles">
+	<div class="col-xs-4">
+		<img src="images/bubble1.png"/>
+	</div>
+	<div class="col-xs-4">
+		<img src="images/bubble2.png"/>
+	</div>
+	<div class="col-xs-4">
+		<img src="images/bubble3.png"/>
+	</div>
+	
+</div>
+<div class="row">
+    	<div class="col-xs-12">
+		<h4 class="center">Sign-up to receive e-mails about Food Fight's catering and events</h4>
+		<form id="email">
+		<p class="warning"></p>
+		<div class="form-group">
+			<input type="text" class="form-control" id="emailinput" name="emailinput"  placeholder="Email Address" value=""></input>
+		</div>
+
+		  <button type="submit" class="btn btn-primary">SUBMIT</button>
+		</form>	
+      
         </div>
-        <div class="row break">
+</div>
+<div class="row bottom">
+        <div class="col-xs-12">
        <hr>
 
        <p class="copy">&copy; 2017 Food Fight Inc.  All Rights Reserved.</p>
         </div>
-        <div class="row bottom">
-         <img src="images/bg.jpg"/>
-        </div>
-
-               
- 
-   
-        		
-
-
-</div><!--end page-->
-
-
+</div>
+</div>
+</div>
+</div>
+</div><!--end container-->
 
 </body>
 </html>
