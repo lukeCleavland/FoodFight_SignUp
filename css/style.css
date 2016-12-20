@@ -5,7 +5,7 @@ body{
 	height: 1024px;
 }
 
-.container{
+.container-fluid{
 
 
 	background-color: white;
@@ -15,11 +15,16 @@ body{
 
 .wrapper{
 	height: 100%;
+	    max-width: 1024px;
+	    margin: auto;
 }
+
 .bg{
 background-image: url('../images/bg.jpg');
     background-repeat: no-repeat;
     height: 100%;
+
+    background-size:100%;
 }
 
 #logo{
