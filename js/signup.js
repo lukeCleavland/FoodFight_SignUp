@@ -16,8 +16,7 @@ function submit_form() {
 					console.log(data);		
 					$("#email").html("");
 					$(".message").show().html("<span style='color:green'>Your email address has been added! <br /> Thank you for taking the time to fill out this form.</span>");
-					//window.setTimeout(window.location.reload(),5000);
-					//alert('Your comment was successfully added');
+					window.setTimeout("window.location.reload()",5000);
 				},
 				error:function(){
 					$(".message").show().html("<span style='color:red'>There was an error connecting to the database.</span>");
